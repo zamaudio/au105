@@ -21,7 +21,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleSignature</key>
-	<string>Acme</string>
+	<string>zzzz</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>MacOSX</string>
@@ -37,7 +37,7 @@
 	<key>DTSDKBuild</key>
 	<string>10K549</string>
 	<key>DTSDKName</key>
-	<string>macosx10.5</string>
+	<string>macosx10.6</string>
 	<key>DTXcode</key>
 	<string>0721</string>
 	<key>DTXcodeBuild</key>
