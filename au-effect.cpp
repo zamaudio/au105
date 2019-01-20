@@ -57,9 +57,16 @@
 
 #include "CAAudioUnit.h"
 #include <AudioToolbox/AudioUnitUtilities.h>
-#include "FaustAUVersion.h"
 
-//#include "faust/misc.h"
+#ifdef DEBUG
+	#define kFaustAUVersion 0xFFFFFFFF
+#else
+	#define kFaustAUVersion 0x00010000	
+#endif
+
+#define FaustAU_TYPE            kAudioUnitType_Effect
+#define FaustAU_COMP_SUBTYPE	'_STYP_'
+#define FaustAU_COMP_MANF		'_MANF_'
 
 using namespace std;
 

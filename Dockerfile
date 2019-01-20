@@ -23,6 +23,8 @@ RUN wget http://zamaudio.com/mbox2/apple-x86-odcctools_758.159-0kxstudio2_amd64.
 RUN wget http://zamaudio.com/mbox2/apple-x86-setup_2_amd64.deb
 RUN wget http://zamaudio.com/mbox2/apple-macports-flac_1.2.1-1_all.deb
 
+RUN apt-get install libglib2.0-0 -y
+
 # Apple cross compiler && build deps
 RUN dpkg -i apple-x86-odcctools_758.159-0kxstudio2_amd64.deb && \
 	dpkg -i apple-x86-gcc_4.2.1~5646-1kxstudio2_amd64.deb && \
