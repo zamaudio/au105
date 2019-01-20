@@ -110,7 +110,7 @@ public:
 		return kFaustAUVersion;
 	}
     
-	virtual OSStatus Initialize();
+	virtual OSStatus aueffectinit();
     
 	virtual OSStatus GetPropertyInfo(AudioUnitPropertyID inID,
                                      AudioUnitScope inScope, AudioUnitElement inElement,
@@ -196,7 +196,7 @@ FaustAUEffect::~FaustAUEffect() {
     
 }
 
-OSStatus FaustAUEffect::Initialize() {
+OSStatus FaustAUEffect::aueffectinit() {
 	OSStatus result = CAAudioUnit::Initialize();
     
 	//dsp->init(long(GetSampleRate()));
@@ -370,6 +370,7 @@ OSStatus FaustAUEffect::GetProperty (AudioUnitPropertyID 		inID,
     {
             
             
+	/*
             // This property allows the host application to find the UI associated with this AudioUnit
         case kAudioUnitProperty_CocoaUI:
         {
@@ -391,7 +392,8 @@ OSStatus FaustAUEffect::GetProperty (AudioUnitPropertyID 		inID,
             
             return noErr;
         }
-            
+        */
+
             // This is our custom property which reports the dspUI
         /*
 	case kAudioUnitCustomProperty_dspUI:
