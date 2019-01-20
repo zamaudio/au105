@@ -10,6 +10,6 @@ ${CXX} \
 	-framework AudioUnit \
 	-framework CoreAudio \
 	-ICoreAudio105 \
-	-dynamiclib \
+	-bundle \
 	au-effect.cpp CoreAudio105/*.cpp \
-	-o au-effect.dylib
+	-o au-effect.component/Contents/MacOS/au-effect
