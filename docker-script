@@ -1,0 +1,15 @@
+#!/bin/bash
+
+CC=i686-apple-darwin10-gcc
+CXX=i686-apple-darwin10-g++
+AR=i686-apple-darwin10-ar
+
+${CXX} \
+	-framework CoreServices \
+	-framework AudioToolbox \
+	-framework AudioUnit \
+	-framework CoreAudio \
+	-ICoreAudio105 \
+	-dynamiclib \
+	au-effect.cpp CoreAudio105/*.cpp \
+	-o au-effect.dylib
