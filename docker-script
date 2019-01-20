@@ -11,5 +11,6 @@ ${CXX} \
 	-framework CoreAudio \
 	-ICoreAudio105 \
 	-bundle \
+	-arch i386 -arch x86_64 \
 	au-effect.cpp CoreAudio105/*.cpp \
 	-o au-effect.component/Contents/MacOS/au-effect
