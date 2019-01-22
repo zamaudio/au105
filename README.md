@@ -1,4 +1,4 @@
-au105
-=====
+autest
+======
 
-Test AudioUnit for 10.5
+Test AudioUnit for 10.5/10.6

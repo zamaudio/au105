@@ -1,0 +1,40 @@
+#!/bin/bash
+
+export PATH=/usr/i686-apple-darwin10/bin:$PATH
+
+CC=i686-apple-darwin10-gcc
+CXX=i686-apple-darwin10-g++
+AR=i686-apple-darwin10-ar
+
+${CXX} \
+	-DTARGET_OS_MAC \
+	-framework CoreServices \
+	-framework AudioToolbox \
+	-framework AudioUnit \
+	-framework CoreAudio \
+	-I./CoreAudio106/AudioUnits/AUPublic/OtherBases \
+	-I./CoreAudio106/AudioUnits/AUPublic/AUBase \
+	-I./CoreAudio106/AudioUnits/AUPublic/Utility \
+	-I./CoreAudio106/AudioUnits/AUPublic/AUCarbonViewBase \
+	-I./CoreAudio106/AudioUnits/AUPublic/AUViewBase \
+	-I./CoreAudio106/AudioUnits/AUPublic/AUInstrumentBase \
+	-I./CoreAudio106/PublicUtility \
+	-Wmost -Wno-four-char-constants -Wno-unknown-pragmas \
+	-bundle \
+	-arch i386 -arch x86_64 \
+	CoreAudio106/AudioUnits/AUPublic/OtherBases/AUEffectBase.cpp \
+	CoreAudio106/AudioUnits/AUPublic/AUBase/AUScopeElement.cpp \
+	CoreAudio106/AudioUnits/AUPublic/AUBase/AUOutputElement.cpp \
+	CoreAudio106/AudioUnits/AUPublic/AUBase/ComponentBase.cpp \
+	CoreAudio106/AudioUnits/AUPublic/AUBase/AUDispatch.cpp \
+	CoreAudio106/AudioUnits/AUPublic/AUBase/AUInputElement.cpp \
+	CoreAudio106/AudioUnits/AUPublic/AUBase/AUBase.cpp \
+	CoreAudio106/AudioUnits/AUPublic/Utility/AUBaseHelper.cpp \
+	CoreAudio106/AudioUnits/AUPublic/Utility/AUBuffer.cpp \
+	CoreAudio106/PublicUtility/CAMutex.cpp \
+	CoreAudio106/PublicUtility/CAAudioChannelLayout.cpp \
+	CoreAudio106/PublicUtility/CAVectorUnit.cpp \
+	CoreAudio106/PublicUtility/CAAUParameter.cpp \
+	CoreAudio106/PublicUtility/CAStreamBasicDescription.cpp \
+	dpfplugin.cpp \
+	-o dpfplugin.component/Contents/MacOS/dpfplugin

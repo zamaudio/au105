@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e
+
+docker build . -t cross-apple-106:latest
+docker run -v `pwd`:/tmp/build --entrypoint "/bin/bash" cross-apple-106:latest -c "cd /tmp/build; bash docker-script"
