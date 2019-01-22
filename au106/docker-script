@@ -22,6 +22,7 @@ ${CXX} \
 	-Wmost -Wno-four-char-constants -Wno-unknown-pragmas \
 	-bundle \
 	-arch i386 -arch x86_64 \
+	-exported_symbols_list dpfplugin.exp \
 	CoreAudio106/AudioUnits/AUPublic/OtherBases/AUEffectBase.cpp \
 	CoreAudio106/AudioUnits/AUPublic/AUBase/AUScopeElement.cpp \
 	CoreAudio106/AudioUnits/AUPublic/AUBase/AUOutputElement.cpp \
