@@ -20,7 +20,7 @@ function rezit() {
 	-i CoreAudio106/AudioUnits/AUPublic/Utility \
 	-i CoreAudio106/PublicUtility \
 	-I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers \
-	-I /Developer/SDKs/MacOSX10.6.sdk \
+	-isysroot /Developer/SDKs/MacOSX10.6.sdk \
 	dpfplugin.r
 
 	ResMerger \
