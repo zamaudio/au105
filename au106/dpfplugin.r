@@ -13,7 +13,7 @@
 #define COMP_MANUF		dpfplugin_COMP_MANF	
 
 #define VERSION			kdpfplugVersion
-#define NAME			"__MyCompanyName__: dpfplugin"
+#define NAME			"DPF : dpfplugin"
 #define DESCRIPTION		"dpfplugin AU"
 #define ENTRY_POINT		"dpfplugEntry"
 

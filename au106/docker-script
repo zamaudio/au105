@@ -6,6 +6,37 @@ CC=i686-apple-darwin10-gcc
 CXX=i686-apple-darwin10-g++
 AR=i686-apple-darwin10-ar
 
+function rezit() {
+
+	Rez \
+	-o dpfplugin.step1.rsrc \
+	-d SystemSevenOrLater=1 \
+	-useDF \
+	-script Roman \
+	-d x86_64_YES -d i386_YES -arch x86_64 -arch i386 \
+	-i . \
+	-i CoreAudio106/AudioUnits/AUPublic/AUBase \
+	-i CoreAudio106/AudioUnits/AUPublic/OtherBases \
+	-i CoreAudio106/AudioUnits/AUPublic/Utility \
+	-i CoreAudio106/PublicUtility \
+	-I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers \
+	-I /Developer/SDKs/MacOSX10.6.sdk \
+	dpfplugin.r
+
+	ResMerger \
+	-dstIs DF \
+	dpfplugin.step1.rsrc \
+	-o dpfplugin.step2.rsrc
+
+	ResMerger \
+	dpfplugin.step2.rsrc \
+	-dstIs DF \
+	-o dpfplugin.component/Contents/Resources/dpfplugin.rsrc
+
+	echo "done"
+
+}
+
 ${CXX} \
 	-DTARGET_OS_MAC \
 	-framework CoreServices \
@@ -39,3 +70,5 @@ ${CXX} \
 	CoreAudio106/PublicUtility/CAStreamBasicDescription.cpp \
 	dpfplugin.cpp \
 	-o dpfplugin.component/Contents/MacOS/dpfplugin
+
+rezit

@@ -8,10 +8,8 @@
 	#define kdpfplugVersion 0x00010000	
 #endif
 
-//~~~~~~~~~~~~~~  Change!!! ~~~~~~~~~~~~~~~~~~~~~//
-#define dpfplugin_COMP_SUBTYPE		'Pass'
-#define dpfplugin_COMP_MANF			'Demo'
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+#define dpfplugin_COMP_SUBTYPE		'dpfx'
+#define dpfplugin_COMP_MANF			'????'
 
 #endif
 
